@@ -37,4 +37,4 @@ app.get('*', function(req, res){
     res.redirect('search');
  });
 
-//app.listen(3003);
+app.listen(3000);
