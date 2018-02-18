@@ -41,6 +41,10 @@ body {
   min-height: 65px;
   width: 300px;
 }
+
+.number.form-group input {
+  width: 50px;
+}
 /* Customize container */
 @media (min-width: 768px) {
   .container {
