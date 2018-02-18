@@ -27,7 +27,7 @@ function isValidData(formData, res) {
     var checkInDate = moment(formData.minTripStartDate, 'YYYY-MM-DD', true);
     var checkOutDate = moment(formData.maxTripStartDate, 'YYYY-MM-DD', true);
     var maxGuestRating = formData.maxGuestRating;
-    var maxTotalRate = formData.maxTotalRate;
+    var maxStarRating = formData.maxStarRating;
 
     var errors = {}
     var validData = {};
@@ -61,10 +61,10 @@ function isValidData(formData, res) {
         validData.maxGuestRating = maxGuestRating;
     }
 
-    if(maxTotalRate && (maxTotalRate < 1 || maxTotalRate > 5)){
-        errors.maxTotalRate = "totalRate";
+    if(maxStarRating && (maxStarRating < 1 || maxStarRating > 5)){
+        errors.maxStarRating = "totalRate";
     }else{
-        validData.maxTotalRate = maxTotalRate;
+        validData.maxStarRating = maxStarRating;
     }
 
     if(Object.keys(errors).length){
