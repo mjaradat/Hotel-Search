@@ -10,7 +10,7 @@ var Validator = {
         var checkInDate = moment(formData.minTripStartDate, 'YYYY-MM-DD', true);
         var checkOutDate = moment(formData.maxTripStartDate, 'YYYY-MM-DD', true);
         var maxGuestRating = formData.maxGuestRating;
-        var maxTotalRate = formData.maxTotalRate;
+        var maxStarRating = formData.maxStarRating;
 
         var errors = {}
         var validData = {};
@@ -51,10 +51,10 @@ var Validator = {
         }
 
         //Total Rating shoud be between 1 to 5 Not required field
-        if (maxTotalRate && (maxTotalRate < 1 || maxTotalRate > 5)) {
-            errors.maxTotalRate = errorMsgs[6];
+        if (maxStarRating && (maxStarRating < 1 || maxStarRating > 5)) {
+            errors.maxStarRating = errorMsgs[6];
         } else {
-            validData.maxTotalRate = maxTotalRate;
+            validData.maxStarRating = maxStarRating;
         }
 
         if (Object.keys(errors).length) {
