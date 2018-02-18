@@ -26,8 +26,8 @@ function isValidData(formData, res) {
     var destinationName = formData.destinationName;
     var checkInDate = moment(formData.minTripStartDate, 'YYYY-MM-DD', true);
     var checkOutDate = moment(formData.maxTripStartDate, 'YYYY-MM-DD', true);
-    var minMaxGuestRating = formData.minMaxGuestRating;
-    var minMaxTotalRate = formData.minMaxTotalRate;
+    var maxGuestRating = formData.maxGuestRating;
+    var maxTotalRate = formData.maxTotalRate;
 
     var errors = {}
     var validData = {};
@@ -55,16 +55,16 @@ function isValidData(formData, res) {
         validData.maxTripStartDate = "";
     }
 
-    if(minMaxGuestRating && (minMaxGuestRating < 1 || minMaxGuestRating > 5)){
+    if(maxGuestRating && (maxGuestRating < 1 || maxGuestRating > 5)){
         errors.guestRating = "guestRating";
     }else{
-        validData.minMaxGuestRating = minMaxGuestRating;
+        validData.maxGuestRating = maxGuestRating;
     }
 
-    if(minMaxTotalRate && (minMaxTotalRate < 1 || minMaxTotalRate > 5)){
-        errors.minMaxTotalRate = "totalRate";
+    if(maxTotalRate && (maxTotalRate < 1 || maxTotalRate > 5)){
+        errors.maxTotalRate = "totalRate";
     }else{
-        validData.minMaxTotalRate = minMaxTotalRate;
+        validData.maxTotalRate = maxTotalRate;
     }
 
     if(Object.keys(errors).length){
