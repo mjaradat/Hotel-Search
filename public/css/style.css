@@ -36,6 +36,11 @@ body {
   min-height: 90px;
   width: 300px;
 }
+
+.number.form-group {
+  min-height: 65px;
+  width: 300px;
+}
 /* Customize container */
 @media (min-width: 768px) {
   .container {
