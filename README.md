@@ -11,3 +11,6 @@ Version - Initial Release 1.0.0
 Requirements:
 
 * Node 4+
+
+Test: 
+* Heroku: https://hotel-search-task.herokuapp.com/search
